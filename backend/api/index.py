@@ -1,9 +1,11 @@
-from sanic import Sanic
-from sanic.response import json
+from flask import Flask
 
-app = Sanic() 
- 
+app = Flask(__name__)
+
 @app.route('/')
-@app.route('/<path:path>')
-async def index(request, path=""):
-  return json({'hello': path})
+def home():
+  return 'Hello, World!'
+
+@app.route('/about')
+def about():
+  return 'About'
