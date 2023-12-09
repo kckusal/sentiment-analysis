@@ -1,4 +1,3 @@
-import Image from "next/image";
 import { Analyzer } from "./Analyzer";
 
 export default function Home() {
@@ -7,14 +6,24 @@ export default function Home() {
       <h1 className=" font-extrabold text-2xl md:text-3xl">
         Welcome to Sentiment Analyzer!
       </h1>
-      <p className=" text-lg text-slate-500">
+      <p className=" text-sm md:text-md lg:text-lg text-slate-500">
         This tool lets you enter a text and returns a sentiment analysis result,
         classifying the text input to be <strong>positive</strong> or{" "}
         <strong>negative</strong>.
       </p>
+      <p className=" mt-4">
+        Source code:{" "}
+        <a
+          href="https://github.com/kckusal/sentiment-analysis"
+          target="_blank"
+          className=" text-blue-400"
+        >
+          https://github.com/kckusal/sentiment-analysis
+        </a>
+      </p>
 
       <div>
-        <p className=" mt-8 font-semibold">
+        <p className=" mt-6 font-semibold">
           Try these examples (taken randomly from Amazon products site):
         </p>
         <ul className=" pl-4 list-inside list-disc text-sm text-gray-600">

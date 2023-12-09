@@ -93,7 +93,7 @@ export const Analyzer = () => {
           <div className=" underline font-bold underline-offset-4 text-blue-500 mb-2">
             RESULT:
           </div>
-          <pre className=" text-gray-800">
+          <pre className=" text-gray-800 max-w-[80vw] whitespace-pre-wrap break-words bg-slate-50 p-2">
             {JSON.stringify(result, null, 2)}
           </pre>
         </div>
