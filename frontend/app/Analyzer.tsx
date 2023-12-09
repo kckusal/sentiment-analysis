@@ -57,10 +57,21 @@ export const Analyzer = () => {
             setIsFetchingResult(true);
             setResult(null);
             setError("");
-            mockFetchResult(inputText)
-              .then((result) => {
-                setResult(result);
-              })
+
+            fetch(process.env.NEXT_PUBLIC_PREDICTION_API_ENDPOINT!, {
+              method: "POST",
+              headers: { "Content-Type": "application/json" },
+              body: JSON.stringify({
+                input_text: inputText,
+              }),
+            })
+              .then((res) => res.json())
+              .then(setResult)
+              .catch((err) =>
+                setError(
+                  err?.message ?? "Something went wrong! Contact developers."
+                )
+              )
               .finally(() => setIsFetchingResult(false));
           }
         }}

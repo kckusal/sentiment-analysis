@@ -1,4 +1,5 @@
 from flask import Flask, request
+import ml
 
 app = Flask(__name__)
 
@@ -15,6 +16,6 @@ def evaluate_sentiment():
   body = request.get_json()
   
   if 'input_text' in body:
-    return "Got body: {}".format(request.get_json())
+    return ml.predict([body['input_text']])
   else:
     return 'Bad request: The HTTP request must have the Content-Type: "application/json" and contain "input_text" param in body.', 400
