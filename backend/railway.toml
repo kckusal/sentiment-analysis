@@ -17,5 +17,5 @@ command = "pipenv install -r requirements.txt"
 command = "pipenv run python api/index.py"
 
 # Optional: Ports
-[ports]
-http = 8080  # Adjust the port as needed
+# [ports]
+# http = 8080  # Adjust the port as needed
