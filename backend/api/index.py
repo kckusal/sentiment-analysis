@@ -30,8 +30,7 @@ def evaluate_sentiment():
   
 
 if __name__ == '__main__':
-  from waitress import serve
-  serve(app, host='0.0.0.0', port=port)
+  app.run(host='0.0.0.0', port=port)
 
 def create_app():
   print('PORT is {}'.format(port))
