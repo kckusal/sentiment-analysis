@@ -1,11 +1,12 @@
 from flask import Flask, request, jsonify
 from flask_cors import CORS, cross_origin
 import os
-# import ml
+import ml
 import sys
 import pkg_resources
 
 port = os.environ['PORT']
+os.environ['TF_CPP_MIN_LOG_LEVEL'] = '2'
 
 app = Flask(__name__)
 cors = CORS(app)
@@ -25,9 +26,9 @@ def evaluate_sentiment():
   body = request.get_json()
   
   if 'input_text' in body:
-    # predictions = ml.predict([body['input_text']])
-    # return predictions[0]
-    return []
+    predictions = ml.predict([body['input_text']])
+    return predictions[0]
+    # return []
   else:
     return 'Bad request: The HTTP request must have the Content-Type: "application/json" and contain "input_text" param in body.', 400
 

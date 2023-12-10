@@ -12,6 +12,8 @@ from tensorflow.keras.models import load_model
 from tensorflow.keras.preprocessing.sequence import pad_sequences
 from pickle import load
 
+os.environ['TF_CPP_MIN_LOG_LEVEL'] = '2'
+
 nltk.download('punkt')
 nltk.download('stopwords')
 nltk.download('wordnet')
