@@ -16,6 +16,8 @@ nltk.download('punkt')
 nltk.download('stopwords')
 nltk.download('wordnet')
 
+port = os.environ['PORT']
+print("PORT = {}".format(port))
 
 # Get the directory of the current script
 current_dir = os.path.dirname(__file__)
