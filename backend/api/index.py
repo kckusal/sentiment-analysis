@@ -24,3 +24,7 @@ def evaluate_sentiment():
     return predictions[0]
   else:
     return 'Bad request: The HTTP request must have the Content-Type: "application/json" and contain "input_text" param in body.', 400
+  
+
+if __name__ == '__main__':
+  app.run(host='0.0.0.0', port=8080)
