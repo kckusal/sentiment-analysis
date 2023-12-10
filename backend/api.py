@@ -6,7 +6,7 @@ import sys
 import pkg_resources
 
 port = os.environ['PORT']
-os.environ['TF_CPP_MIN_LOG_LEVEL'] = 2
+os.environ['TF_CPP_MIN_LOG_LEVEL'] = '2'
 
 app = Flask(__name__)
 cors = CORS(app)
@@ -45,7 +45,9 @@ def version_info():
   return jsonify(info)
 
 if __name__ == '__main__':
-  app.run(host='0.0.0.0', port=port, use_reloader=False)
+  from waitress import serve
+  serve(app, host="0.0.0.0", port=port)
+  # app.run(host='0.0.0.0', port=port, use_reloader=False)
 
 def create_app():
   print('PORT is {}'.format(port))
