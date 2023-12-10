@@ -1,0 +1,21 @@
+# railway.toml
+
+# Environment configuration
+[env.production]
+# Define your environment variables here, if any
+
+# Build command
+[build]
+# The build command for your application
+# For example, if you're using Pipenv:
+command = "pipenv install -r requirements.txt"
+
+# Run command
+[run]
+# The command to run your application
+# For example, if you're using Pipenv:
+command = "pipenv run python api/index.py"
+
+# Optional: Ports
+[ports]
+http = 8080  # Adjust the port as needed
